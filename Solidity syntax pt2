@@ -1,0 +1,32 @@
+//import solidity
+pragma solidity ^0.4.0;
+
+//string
+string name = "manny"'
+
+//integers
+uint storedData = 34;
+
+//boolean
+bool atrueorfalsevalue = false;
+
+// address
+address walletAddress = 0x723ad3421;  //example 
+
+//arrays
+string[] name;
+
+//bytes
+bytes code;
+
+// Struct to define your own (kind of like definition from python)
+struct User {
+    string firstName;
+    string lastName;
+}
+
+//enums 
+enum userType{buyer, seller}
+
+//mapping
+mapping(address => uint) public balances;
