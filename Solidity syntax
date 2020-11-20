@@ -1,0 +1,28 @@
+//import solidity
+pragma solidity ^0.4.0;
+
+//import
+import "filename";
+import * as symbolname from "filname"; //
+import {symbol as alias, sybol2} from "filename";//import specifics things from a file
+
+//my first contract
+contract simpleContract {
+    //state variable
+    uint storedData;
+    
+    //modifier is a condition
+    modifier onlyData() {
+        require(
+            storeData >= 0);
+            _;  // "_" closes out the modifier
+    }
+    
+    //function
+    function set(unit x) public {
+        storeData = x;
+    }
+    
+    //event (things that happen in the program)
+    event Sent(address from, address to, uint storeData);
+}
