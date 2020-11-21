@@ -1,0 +1,53 @@
+//import solidity
+pragma solidity ^0.4.0;
+
+contract Inheritance {
+    address owner:
+    bool deceased;
+    uint money;
+    
+    constructor() public payable  //building an instance
+    {    
+        owner = msg.sender;   // msg is a global availabele variable
+        money = msg.value;
+        deceased = false;
+    }
+    
+    //make sure there is onle one owner
+    modifier oneOwner 
+    {   
+        require (msg.sender == owner);
+        _;
+    }
+    
+    //confirm the person is deceased
+    modifier isDeceased 
+    {
+        require (deceased == true);
+        _;
+    }
+    
+    address[] wallets;    //array named wallets
+    
+    mapping (address => uint) inheritance; 
+    
+    function setup(adress _wallet, uint _inheritance) public oneOwner //needs this modifier to run 
+    {
+        wallets.push(_wallet);
+        inheritance[_wallet] = _inheritance;
+    }
+    
+    function moneyPaid() private isDeceased
+    {
+        //for loop accumulates the money in the wallet and transfers if the person is deceased
+        for  (uint i=0; 1<wallets.length; i++){  
+            wallets[i].transfer(inheritance[wallets[i]]);
+        }
+    }
+    
+    function died() public oneOwner
+    {
+        deceased = true;
+        moneyPaid();
+    }
+}
