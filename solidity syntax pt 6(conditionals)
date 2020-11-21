@@ -1,0 +1,27 @@
+//import solidity
+pragma solidity ^0.4.0;
+
+contract Simple {
+    // if statement
+    if(a == 2){
+        
+    } else{
+        
+    }
+    
+    //check condition first then...
+    while (a >= 0){
+        // runs code if condition is met
+    }
+    
+    // do run the code until condition is not true
+    do{
+        
+    } while (a>= 0)
+    
+    //for loop 
+    for (uint i=0; i>=50; i++) {
+        //code is run
+    }
+
+}
