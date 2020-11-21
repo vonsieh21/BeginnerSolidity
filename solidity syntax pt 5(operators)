@@ -1,0 +1,18 @@
+//import solidity
+pragma solidity ^0.4.0;
+
+contract Simple {
+    // Arithmetic operators + - * / % **
+    uint a = 2;
+    uint b = 3;
+    
+    uint c = a ** b;
+    
+    //logical operators
+    // !(not)  &&(and)  ||(or)  ==(equal to) !=(not equal) 
+    bool hasMoney =! false;
+    
+    // Bitwise operators
+    //&(and) |(or) ^(exclusive or) ~(negation) >>(bitwise) <<(bitwise shift)
+    bytes1 contractValue = 0x02 | 0x01;
+}
